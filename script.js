@@ -6,11 +6,26 @@ let memoirContent = '';
 // 百度语音API相关
 let mediaRecorder = null;
 let audioChunks = [];
-// 后端服务配置
+
+// 后端服务配置（支持生产和开发环境）
 const BACKEND_CONFIG = {
-    baseUrl: 'http://localhost:3001',
+    baseUrl: (() => {
+        // 检测当前环境
+        const hostname = window.location.hostname;
+        // 如果是本地访问，使用localhost
+        if (hostname === 'localhost' || hostname === '127.0.0.1') {
+            return 'http://localhost:3001';
+        }
+        // 生产环境使用当前域名
+        return window.location.origin;
+    })(),
     accessToken: ''
 };
+
+// 记录当前环境
+console.log('=== 前端运行环境检测 ===');
+console.log('当前域名:', window.location.hostname);
+console.log('后端API地址:', BACKEND_CONFIG.baseUrl);
 let apiConfig = {
     accessToken: ''
 };

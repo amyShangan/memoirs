@@ -4,26 +4,36 @@ const multer = require('multer');
 const axios = require('axios');
 const path = require('path');
 const sqlite3 = require('sqlite3').verbose();
+require('dotenv').config();
 
 const app = express();
-const port = 3001;
+const port = process.env.PORT || 3001;
 
 // 中间件
-app.use(cors());
+app.use(cors({
+    origin: process.env.CORS_ORIGIN || '*',
+    credentials: true
+}));
 app.use(express.json());
 app.use(express.static('public'));
 
-// 百度API配置
+// 百度API配置（支持环境变量）
 const API_CONFIG = {
-    apiKey: 'gCLxpGzB8gTMv7WL7DUqLohD',
-    secretKey: 'OIvnHq2TfiTAIRxpi8DcWrTXTpvkqzL9',
+    apiKey: process.env.API_KEY || 'gCLxpGzB8gTMv7WL7DUqLohD',
+    secretKey: process.env.SECRET_KEY || 'OIvnHq2TfiTAIRxpi8DcWrTXTpvkqzL9',
     accessToken: '',
     tokenExpireTime: 0
 };
 
 // 数据库配置
-const DB_PATH = path.join(__dirname, 'memoir.db');
+const DB_PATH = process.env.DB_PATH ? path.resolve(process.env.DB_PATH) : path.join(__dirname, 'memoir.db');
 let db;
+
+// 检测是否为生产环境
+const isProduction = process.env.NODE_ENV === 'production';
+console.log('=== 运行环境 ===');
+console.log('环境:', isProduction ? '生产环境' : '开发环境');
+console.log('端口:', port);
 
 // 初始化数据库
 function initDatabase() {
