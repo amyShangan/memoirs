@@ -1,0 +1,402 @@
+/* 全局样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Microsoft YaHei', Arial, sans-serif;
+    line-height: 1.6;
+    color: #e0e0e0;
+    background-color: #121212;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* 头部样式 */
+header {
+    text-align: center;
+    margin-bottom: 40px;
+    padding: 30px 0;
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+}
+
+header h1 {
+    font-size: 2.5em;
+    color: #ffffff;
+    margin-bottom: 10px;
+    text-shadow: 0 0 10px rgba(52, 152, 219, 0.5);
+}
+
+header p {
+    font-size: 1.2em;
+    color: #b0b0b0;
+}
+
+.help-tip {
+    background-color: #2c3e50;
+    border-left: 4px solid #3498db;
+    padding: 15px;
+    margin-top: 15px;
+    border-radius: 5px;
+    font-size: 1.1em;
+    color: #e0e0e0;
+}
+
+/* 主内容区域 */
+main {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* 语音输入区域 */
+.voice-input-section {
+    background-color: #1e1e1e;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+}
+
+.voice-input-section h2 {
+    font-size: 1.8em;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.voice-controls {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.btn-primary {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+    min-width: 150px;
+    box-shadow: 0 4px 10px rgba(52, 152, 219, 0.3);
+}
+
+.btn-primary:hover {
+    background-color: #2980b9;
+    box-shadow: 0 6px 15px rgba(52, 152, 219, 0.4);
+    transform: translateY(-2px);
+}
+
+.btn-primary:active {
+    transform: scale(0.98) translateY(0);
+}
+
+.btn-secondary {
+    background-color: #555555;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.2em;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+    min-width: 150px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.btn-secondary:hover {
+    background-color: #666666;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
+}
+
+.btn-secondary:disabled {
+    background-color: #333333;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+.status {
+    font-size: 1.1em;
+    color: #b0b0b0;
+    padding: 15px;
+    background-color: #2c2c2c;
+    border-radius: 8px;
+    border-left: 4px solid #3498db;
+    margin-bottom: 20px;
+}
+
+/* 手动输入区域 */
+.manual-input-section {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #3c3c3c;
+}
+
+.manual-input-section h3 {
+    font-size: 1.4em;
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+.manual-input {
+    width: 100%;
+    min-height: 150px;
+    padding: 15px;
+    font-size: 1.1em;
+    background-color: #2c2c2c;
+    color: #e0e0e0;
+    border: 1px solid #3c3c3c;
+    border-radius: 8px;
+    resize: vertical;
+    margin-bottom: 15px;
+}
+
+.manual-input:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+/* 百度语音API配置区域 */
+.api-config-section {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #3c3c3c;
+}
+
+.api-config-section h3 {
+    font-size: 1.4em;
+    color: #ffffff;
+    margin-bottom: 15px;
+}
+
+.api-config {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.api-input {
+    flex: 1;
+    min-width: 200px;
+    padding: 10px;
+    font-size: 1em;
+    background-color: #2c2c2c;
+    color: #e0e0e0;
+    border: 1px solid #3c3c3c;
+    border-radius: 8px;
+}
+
+.api-input:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 0 2px rgba(52, 152, 219, 0.2);
+}
+
+.config-hint {
+    font-size: 0.9em;
+    color: #909090;
+    margin-top: 5px;
+    line-height: 1.4;
+}
+
+/* 回忆录区域 */
+.memoir-section {
+    background-color: #1e1e1e;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+}
+
+.memoir-section h2 {
+    font-size: 1.8em;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.memoir-content {
+    font-size: 1.2em;
+    line-height: 1.8;
+    min-height: 300px;
+    padding: 20px;
+    background-color: #2c2c2c;
+    border-radius: 8px;
+    border: 1px solid #3c3c3c;
+    white-space: pre-wrap;
+    color: #e0e0e0;
+}
+
+/* 底部样式 */
+footer {
+    text-align: center;
+    margin-top: 40px;
+    padding: 20px 0;
+    color: #b0b0b0;
+    font-size: 1em;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .container {
+        padding: 10px;
+    }
+    
+    header h1 {
+        font-size: 2em;
+    }
+    
+    .voice-controls {
+        flex-direction: column;
+    }
+    
+    .btn-primary, .btn-secondary {
+        width: 100%;
+    }
+    
+    .voice-input-section, .memoir-section {
+        padding: 20px;
+    }
+}
+
+/* 录音状态指示 */
+.recording {
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(231, 76, 60, 0.7);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(231, 76, 60, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(231, 76, 60, 0);
+    }
+}
+
+.recording-status {
+    color: #e74c3c !important;
+    font-weight: bold;
+}
+
+/* 语音记录列表 */
+.voice-list-section {
+    background-color: #1e1e1e;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+}
+
+.voice-list-section h2 {
+    font-size: 1.8em;
+    color: #ffffff;
+    margin-bottom: 20px;
+}
+
+.voice-list {
+    font-size: 1.2em;
+    line-height: 1.8;
+    min-height: 300px;
+    padding: 20px;
+    background-color: #2c2c2c;
+    border-radius: 8px;
+    border: 1px solid #3c3c3c;
+    color: #e0e0e0;
+}
+
+.voice-item {
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #3c3c3c;
+    border-radius: 8px;
+    background-color: #1e1e1e;
+}
+
+.voice-item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.voice-item-info {
+    font-size: 14px;
+    color: #b0b0b0;
+}
+
+.voice-item-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.voice-item-content {
+    margin-top: 15px;
+    padding: 15px;
+    background-color: #2c2c2c;
+    border-radius: 8px;
+    white-space: pre-wrap;
+    font-family: 'Courier New', Courier, monospace;
+    line-height: 1.6;
+    color: #e0e0e0;
+}
+
+.voice-item-audio {
+    margin-top: 15px;
+}
+
+/* 音频播放器样式 */
+audio {
+    width: 100%;
+    background-color: #2c2c2c;
+    border-radius: 4px;
+    padding: 5px;
+}
+
+/* 回忆录项目样式 */
+.memoir-item {
+    margin-bottom: 25px;
+    padding: 25px;
+    border: 1px solid #3c3c3c;
+    border-radius: 10px;
+    background-color: #1e1e1e;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.memoir-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.memoir-item-date {
+    font-size: 14px;
+    color: #3498db;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.memoir-item-content {
+    font-size: 1.1em;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    color: #e0e0e0;
+    white-space: pre-wrap;
+}
+
+.memoir-item-voice {
+    display: flex;
+    justify-content: flex-end;
+}

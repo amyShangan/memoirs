@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>老年人语音回忆录</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>我的语音回忆录</h1>
+            <p>通过语音记录您的珍贵回忆</p>
+            <div class="help-tip">
+                <p>使用说明：点击"开始录音"按钮，然后讲述您的回忆，系统会自动将语音转换为文字。</p>
+            </div>
+        </header>
+        
+        <main>
+            <section class="voice-input-section">
+                <h2>语音输入</h2>
+                
+                <div class="voice-controls">
+                    <button id="start-btn" class="btn-primary">开始录音</button>
+                    <button id="stop-btn" class="btn-secondary" disabled>停止录音</button>
+                    <button id="clear-btn" class="btn-secondary">清空</button>
+                    <button id="refresh-voices-btn" class="btn-secondary">刷新语音列表</button>
+                </div>
+                <div id="status" class="status">点击开始录音按钮开始记录</div>
+                
+                <!-- 手动输入功能 -->
+                <div class="manual-input-section">
+                    <h3>手动输入</h3>
+                    <textarea id="manual-input" class="manual-input" placeholder="如果语音输入不可用，可以在这里手动输入您的回忆"></textarea>
+                    <button id="add-btn" class="btn-secondary">添加内容</button>
+                </div>
+            </section>
+            
+            <section class="memoir-section">
+                <h2>我的回忆录</h2>
+                <div id="memoir-content" class="memoir-content">
+                    <!-- 回忆录内容将在这里显示 -->
+                </div>
+            </section>
+            
+            <section class="voice-list-section">
+                <h2>语音记录</h2>
+                <div id="voice-list" class="voice-list">
+                    <!-- 语音记录列表将在这里显示 -->
+                    <p>暂无语音记录，点击开始录音按钮开始记录</p>
+                </div>
+            </section>
+        </main>
+        
+        <footer>
+            <p>© 2026 老年人语音回忆录</p>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
